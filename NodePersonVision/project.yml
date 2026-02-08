@@ -1,0 +1,32 @@
+name: NodePersonVision
+options:
+  bundleIdPrefix: com.nodeperson
+  deploymentTarget:
+    visionOS: "1.0"
+  xcodeVersion: "15.0"
+
+packages:
+  NodePersonApple:
+    path: ..
+
+targets:
+  NodePersonVision:
+    type: application
+    platform: visionOS
+    sources:
+      - Sources
+    settings:
+      base:
+        INFOPLIST_FILE: Info.plist
+        CODE_SIGN_ENTITLEMENTS: NodePersonVision.entitlements
+        PRODUCT_BUNDLE_IDENTIFIER: com.nodeperson.vision
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        GENERATE_INFOPLIST_FILE: false
+        SWIFT_VERSION: "5.9"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    dependencies:
+      - package: NodePersonApple
+        product: NodePersonShared
+    info:
+      path: Info.plist

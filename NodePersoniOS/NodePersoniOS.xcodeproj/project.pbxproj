@@ -1,0 +1,373 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		057AEBE7CDD77041155A689C /* NodePersonShared in Frameworks */ = {isa = PBXBuildFile; productRef = 67DB139D41094F3662B95C19 /* NodePersonShared */; };
+		05FDBBF258DDCA31DE4FBECB /* NodePersonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C6D1BAA3819F5F8C5E451D /* NodePersonListView.swift */; };
+		17FC1F2FB026C3DEF53080A3 /* NodePersonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF467CA87556360F6671BC /* NodePersonApp.swift */; };
+		35A8780E2662D3904CFB0182 /* AddNodePersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5933A46A27A6F5330DB791 /* AddNodePersonView.swift */; };
+		74FC36203FC9126D8F29A5F5 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F466E91B7F70E45BA39A1F /* LeaderboardView.swift */; };
+		A47E20726D3622E8ACBB4012 /* NodePersonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A32B3C7FE7A56F828B1F698 /* NodePersonDetailView.swift */; };
+		B12B5EF27E441C7A81FEED24 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E09B0BD65FCD6E3B634267 /* Components.swift */; };
+		C1D11B4A599E1E382827B3D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82560B07C863D34751A6084 /* ContentView.swift */; };
+		F39307E925A7089DDE7741D4 /* ScriptBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2130C2701F6B729B86EF5C6C /* ScriptBrowserView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2130C2701F6B729B86EF5C6C /* ScriptBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptBrowserView.swift; sourceTree = "<group>"; };
+		23FF3D28D007CFD317A5981E /* NodePersoniOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NodePersoniOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A32B3C7FE7A56F828B1F698 /* NodePersonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodePersonDetailView.swift; sourceTree = "<group>"; };
+		66C6D1BAA3819F5F8C5E451D /* NodePersonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodePersonListView.swift; sourceTree = "<group>"; };
+		68F466E91B7F70E45BA39A1F /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		C0DF467CA87556360F6671BC /* NodePersonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodePersonApp.swift; sourceTree = "<group>"; };
+		CEF35DD4B5CBD473A64FF2B5 /* nodeperson-apple */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "nodeperson-apple"; path = ..; sourceTree = SOURCE_ROOT; };
+		D82560B07C863D34751A6084 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DD5933A46A27A6F5330DB791 /* AddNodePersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNodePersonView.swift; sourceTree = "<group>"; };
+		F8E09B0BD65FCD6E3B634267 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6EA82A409157ABB76AC058CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				057AEBE7CDD77041155A689C /* NodePersonShared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		33361B4657A68692F0391DEC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DD5933A46A27A6F5330DB791 /* AddNodePersonView.swift */,
+				D82560B07C863D34751A6084 /* ContentView.swift */,
+				68F466E91B7F70E45BA39A1F /* LeaderboardView.swift */,
+				5A32B3C7FE7A56F828B1F698 /* NodePersonDetailView.swift */,
+				66C6D1BAA3819F5F8C5E451D /* NodePersonListView.swift */,
+				2130C2701F6B729B86EF5C6C /* ScriptBrowserView.swift */,
+				D45D038D59A81202A2240B46 /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7CF0DDD8782278993CA67892 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				CEF35DD4B5CBD473A64FF2B5 /* nodeperson-apple */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		A0721BF36E8A0693A280E7AE = {
+			isa = PBXGroup;
+			children = (
+				7CF0DDD8782278993CA67892 /* Packages */,
+				C8F5335310505ACA061513A1 /* Sources */,
+				C9B40BD07E36E451338F9717 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C8F5335310505ACA061513A1 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C0DF467CA87556360F6671BC /* NodePersonApp.swift */,
+				33361B4657A68692F0391DEC /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		C9B40BD07E36E451338F9717 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				23FF3D28D007CFD317A5981E /* NodePersoniOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D45D038D59A81202A2240B46 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F8E09B0BD65FCD6E3B634267 /* Components.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD19717098BFDA6B670B92B0 /* NodePersoniOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6F394C54E9280EB32A905CF /* Build configuration list for PBXNativeTarget "NodePersoniOS" */;
+			buildPhases = (
+				5FC88D183D25EB25782E9847 /* Sources */,
+				6EA82A409157ABB76AC058CF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NodePersoniOS;
+			packageProductDependencies = (
+				67DB139D41094F3662B95C19 /* NodePersonShared */,
+			);
+			productName = NodePersoniOS;
+			productReference = 23FF3D28D007CFD317A5981E /* NodePersoniOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7DE022CD504AA7DEFAAF8199 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 62BC82F2ACE793F833657DE3 /* Build configuration list for PBXProject "NodePersoniOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = A0721BF36E8A0693A280E7AE;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A8BD29027FED37AC06D6C0E0 /* XCLocalSwiftPackageReference ".." */,
+			);
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD19717098BFDA6B670B92B0 /* NodePersoniOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5FC88D183D25EB25782E9847 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35A8780E2662D3904CFB0182 /* AddNodePersonView.swift in Sources */,
+				B12B5EF27E441C7A81FEED24 /* Components.swift in Sources */,
+				C1D11B4A599E1E382827B3D0 /* ContentView.swift in Sources */,
+				74FC36203FC9126D8F29A5F5 /* LeaderboardView.swift in Sources */,
+				17FC1F2FB026C3DEF53080A3 /* NodePersonApp.swift in Sources */,
+				A47E20726D3622E8ACBB4012 /* NodePersonDetailView.swift in Sources */,
+				05FDBBF258DDCA31DE4FBECB /* NodePersonListView.swift in Sources */,
+				F39307E925A7089DDE7741D4 /* ScriptBrowserView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0801FC53595C90E9EFDAA9B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NodePersoniOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nodeperson.ios;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22FB04C758726795C661E46F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		2D94E6761C005CED4A188452 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NodePersoniOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nodeperson.ios;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6FBE71BD2D9495BF159DD7B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		62BC82F2ACE793F833657DE3 /* Build configuration list for PBXProject "NodePersoniOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FBE71BD2D9495BF159DD7B3 /* Debug */,
+				22FB04C758726795C661E46F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F6F394C54E9280EB32A905CF /* Build configuration list for PBXNativeTarget "NodePersoniOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0801FC53595C90E9EFDAA9B5 /* Debug */,
+				2D94E6761C005CED4A188452 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A8BD29027FED37AC06D6C0E0 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		67DB139D41094F3662B95C19 /* NodePersonShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NodePersonShared;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 7DE022CD504AA7DEFAAF8199 /* Project object */;
+}

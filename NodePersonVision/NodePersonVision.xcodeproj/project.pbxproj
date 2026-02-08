@@ -1,0 +1,347 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A7E20AB4F5DF56D6641D5F4 /* VisionScriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F412260F00D1D711E0F0A23 /* VisionScriptView.swift */; };
+		0BF53632139C5FFB46030652 /* VisionLeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62BBE60CFF1F975CA6A0B16 /* VisionLeaderboardView.swift */; };
+		362CF94F096D12B854BAD9C3 /* VisionContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD8F64AC42C6EE06A8DEB9 /* VisionContentView.swift */; };
+		C9BA1BC6542577DFC93B9D4F /* NodePersonShared in Frameworks */ = {isa = PBXBuildFile; productRef = 34F91C3A6C3873720DA92253 /* NodePersonShared */; };
+		E41F7A13372A077AE90E87A0 /* NodePersonVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB4611545661B6ABE63AB6F /* NodePersonVisionApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2BB4611545661B6ABE63AB6F /* NodePersonVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodePersonVisionApp.swift; sourceTree = "<group>"; };
+		3B60426E80B06CD9178E3F7E /* NodePersonVision.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NodePersonVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CD1447FD3E144815F70B48A /* nodeperson-apple */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "nodeperson-apple"; path = ..; sourceTree = SOURCE_ROOT; };
+		8F412260F00D1D711E0F0A23 /* VisionScriptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionScriptView.swift; sourceTree = "<group>"; };
+		D62BBE60CFF1F975CA6A0B16 /* VisionLeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionLeaderboardView.swift; sourceTree = "<group>"; };
+		DBCD8F64AC42C6EE06A8DEB9 /* VisionContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionContentView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F74F5116F69CB48B8574D782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9BA1BC6542577DFC93B9D4F /* NodePersonShared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24CB7A7E2BC4412C831C18ED = {
+			isa = PBXGroup;
+			children = (
+				E4F8E8615D27CABA519BCF04 /* Packages */,
+				68326CFE3B1C4070591F8478 /* Sources */,
+				90328AB8B45B9307B4FB69A0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4D05C0685592166EF380791B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DBCD8F64AC42C6EE06A8DEB9 /* VisionContentView.swift */,
+				D62BBE60CFF1F975CA6A0B16 /* VisionLeaderboardView.swift */,
+				8F412260F00D1D711E0F0A23 /* VisionScriptView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		68326CFE3B1C4070591F8478 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2BB4611545661B6ABE63AB6F /* NodePersonVisionApp.swift */,
+				4D05C0685592166EF380791B /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		90328AB8B45B9307B4FB69A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B60426E80B06CD9178E3F7E /* NodePersonVision.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4F8E8615D27CABA519BCF04 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				8CD1447FD3E144815F70B48A /* nodeperson-apple */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A034BDEC4BAAD84604637C21 /* NodePersonVision */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B868A56ECF6B00D268595F6 /* Build configuration list for PBXNativeTarget "NodePersonVision" */;
+			buildPhases = (
+				C8C17A8AA32E46B973A0AD7A /* Sources */,
+				F74F5116F69CB48B8574D782 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NodePersonVision;
+			packageProductDependencies = (
+				34F91C3A6C3873720DA92253 /* NodePersonShared */,
+			);
+			productName = NodePersonVision;
+			productReference = 3B60426E80B06CD9178E3F7E /* NodePersonVision.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A1DE10EA02688475D9FF6F0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 2ABACA05599FC8BEF06A7F7E /* Build configuration list for PBXProject "NodePersonVision" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 24CB7A7E2BC4412C831C18ED;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F2285188FBA5F9980277BFC1 /* XCLocalSwiftPackageReference ".." */,
+			);
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A034BDEC4BAAD84604637C21 /* NodePersonVision */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C8C17A8AA32E46B973A0AD7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E41F7A13372A077AE90E87A0 /* NodePersonVisionApp.swift in Sources */,
+				362CF94F096D12B854BAD9C3 /* VisionContentView.swift in Sources */,
+				0BF53632139C5FFB46030652 /* VisionLeaderboardView.swift in Sources */,
+				0A7E20AB4F5DF56D6641D5F4 /* VisionScriptView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2219DFC417F1E03F54AD7A51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NodePersonVision.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nodeperson.vision;
+				SDKROOT = xros;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
+		};
+		6AF1418DFB750DAFDFCFF454 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NodePersonVision.entitlements;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nodeperson.vision;
+				SDKROOT = xros;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+		6B416E5F3F6C493F7F1FF208 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		D73530BC6E856515F7228A2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2ABACA05599FC8BEF06A7F7E /* Build configuration list for PBXProject "NodePersonVision" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B416E5F3F6C493F7F1FF208 /* Debug */,
+				D73530BC6E856515F7228A2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2B868A56ECF6B00D268595F6 /* Build configuration list for PBXNativeTarget "NodePersonVision" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2219DFC417F1E03F54AD7A51 /* Debug */,
+				6AF1418DFB750DAFDFCFF454 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		F2285188FBA5F9980277BFC1 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		34F91C3A6C3873720DA92253 /* NodePersonShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NodePersonShared;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8A1DE10EA02688475D9FF6F0 /* Project object */;
+}

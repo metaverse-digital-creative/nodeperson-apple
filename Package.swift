@@ -21,26 +21,5 @@ let package = Package(
             name: "NodePersonShared",
             path: "Sources/NodePersonShared"
         ),
-
-        // ── iOS App ──
-        .executableTarget(
-            name: "NodePersoniOS",
-            dependencies: ["NodePersonShared"],
-            path: "Sources/NodePersoniOS"
-        ),
-
-        // ── watchOS App ──
-        .executableTarget(
-            name: "NodePersonWatch",
-            dependencies: ["NodePersonShared"],
-            path: "Sources/NodePersonWatch"
-        ),
-
-        // ── visionOS App ──
-        .executableTarget(
-            name: "NodePersonVision",
-            dependencies: ["NodePersonShared"],
-            path: "Sources/NodePersonVision"
-        ),
     ]
 )
