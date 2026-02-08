@@ -20,47 +20,127 @@ enum APIEndpoint {
     // Referrals
     case referralStats
 
+    // ─── Green Karma Score ───
+    case karmaLeaderboard(limit: Int = 20, region: String? = nil)
+    case karma(nodePersonId: String)
+    case refreshKarma(nodePersonId: String)
+    case refreshAllKarma
+
+    // ─── Events (茶會功能) ───
+    case listEvents(region: String? = nil)
+    case eventStats(region: String? = nil)
+    case getEvent(id: String)
+    case createEvent
+    case checkIn(eventId: String)
+    case completeEvent(id: String)
+    case cancelEvent(id: String)
+    case hostEvents(nodePersonId: String)
+
+    // ─── Waste Matching (一鍵媒合) ───
+    case classifyWaste
+    case createWastePost
+    case listWastePosts(category: String? = nil, status: String? = nil)
+    case getWastePost(id: String)
+    case wastePostMatches(postId: String)
+    case acceptWasteMatch(matchId: String)
+    case completeWasteMatch(matchId: String)
+    case wasteStats
+
     /// HTTP method
     var method: String {
         switch self {
-        case .createNodePerson, .recalculateInfluence:
+        case .createNodePerson, .recalculateInfluence,
+             .refreshKarma, .refreshAllKarma,
+             .createEvent, .checkIn, .completeEvent,
+             .classifyWaste, .createWastePost, .acceptWasteMatch, .completeWasteMatch:
             return "POST"
         case .updateNodePerson:
             return "PATCH"
-        case .deleteNodePerson:
+        case .deleteNodePerson, .cancelEvent:
             return "DELETE"
         default:
             return "GET"
         }
     }
 
-    /// URL path (appended to base + community prefix)
+    /// URL path (appended to base URL)
     var path: String {
         switch self {
+        // Node Persons
         case .listNodePersons:
-            return "/node-persons"
+            return "/community/node-persons"
         case .getNodePerson(let id):
-            return "/node-persons/\(id)"
+            return "/community/node-persons/\(id)"
         case .createNodePerson:
-            return "/node-persons"
+            return "/community/node-persons"
         case .updateNodePerson(let id):
-            return "/node-persons/\(id)"
+            return "/community/node-persons/\(id)"
         case .deleteNodePerson(let id):
-            return "/node-persons/\(id)"
+            return "/community/node-persons/\(id)"
         case .leaderboard:
-            return "/node-persons/leaderboard"
+            return "/community/node-persons/leaderboard"
         case .nodePersonStats:
-            return "/node-persons/stats"
+            return "/community/node-persons/stats"
         case .recalculateInfluence(let id):
-            return "/node-persons/\(id)/recalculate"
+            return "/community/node-persons/\(id)/recalculate"
+
+        // Scripts
         case .conversationScripts:
-            return "/conversation-scripts"
+            return "/community/conversation-scripts"
         case .conversationScript(let id):
-            return "/conversation-scripts/\(id)"
+            return "/community/conversation-scripts/\(id)"
         case .corePrinciple:
-            return "/conversation-scripts/principle"
+            return "/community/conversation-scripts/principle"
+
+        // Referrals
         case .referralStats:
-            return "/referrals/stats"
+            return "/community/referrals/stats"
+
+        // Karma
+        case .karmaLeaderboard:
+            return "/community/karma/leaderboard"
+        case .karma(let nodePersonId):
+            return "/community/karma/\(nodePersonId)"
+        case .refreshKarma(let nodePersonId):
+            return "/community/karma/\(nodePersonId)/refresh"
+        case .refreshAllKarma:
+            return "/community/karma/refresh-all"
+
+        // Events
+        case .listEvents:
+            return "/events"
+        case .eventStats:
+            return "/events/stats"
+        case .getEvent(let id):
+            return "/events/\(id)"
+        case .createEvent:
+            return "/events"
+        case .checkIn(let eventId):
+            return "/events/\(eventId)/check-in"
+        case .completeEvent(let id):
+            return "/events/\(id)/complete"
+        case .cancelEvent(let id):
+            return "/events/\(id)"
+        case .hostEvents(let nodePersonId):
+            return "/events/host/\(nodePersonId)"
+
+        // Waste
+        case .classifyWaste:
+            return "/waste/classify"
+        case .createWastePost:
+            return "/waste/posts"
+        case .listWastePosts:
+            return "/waste/posts"
+        case .getWastePost(let id):
+            return "/waste/posts/\(id)"
+        case .wastePostMatches(let postId):
+            return "/waste/posts/\(postId)/matches"
+        case .acceptWasteMatch(let matchId):
+            return "/waste/matches/\(matchId)/accept"
+        case .completeWasteMatch(let matchId):
+            return "/waste/matches/\(matchId)/complete"
+        case .wasteStats:
+            return "/waste/stats"
         }
     }
 
@@ -77,6 +157,21 @@ enum APIEndpoint {
             return [.init(name: "nodeType", value: nodeType)]
         case .leaderboard(let limit):
             return [.init(name: "limit", value: String(limit))]
+        case .karmaLeaderboard(let limit, let region):
+            var items: [URLQueryItem] = [.init(name: "limit", value: String(limit))]
+            if let region { items.append(.init(name: "region", value: region)) }
+            return items
+        case .listEvents(let region):
+            guard let region else { return nil }
+            return [.init(name: "region", value: region)]
+        case .eventStats(let region):
+            guard let region else { return nil }
+            return [.init(name: "region", value: region)]
+        case .listWastePosts(let category, let status):
+            var items: [URLQueryItem] = []
+            if let category { items.append(.init(name: "category", value: category)) }
+            if let status { items.append(.init(name: "status", value: status)) }
+            return items.isEmpty ? nil : items
         default:
             return nil
         }
@@ -85,7 +180,7 @@ enum APIEndpoint {
     /// Build the full URL
     func url() -> URL? {
         var components = URLComponents(
-            string: APIConfig.baseURL + APIConfig.communityPath + path
+            string: APIConfig.baseURL + path
         )
         components?.queryItems = queryItems
         return components?.url
