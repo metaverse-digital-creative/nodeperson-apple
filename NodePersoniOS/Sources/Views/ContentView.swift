@@ -5,6 +5,11 @@ import NodePersonShared
 struct ContentView: View {
     var body: some View {
         TabView {
+            WellnessHomeView()
+                .tabItem {
+                    Label("Wellness", systemImage: "sparkles")
+                }
+
             NodePersonListView()
                 .tabItem {
                     Label("節點人物", systemImage: "person.3.fill")
@@ -20,7 +25,7 @@ struct ContentView: View {
                     Label("排行榜", systemImage: "trophy.fill")
                 }
         }
-        .tint(Color(hex: "#EC4899"))
+        .tint(Color(hex: "#7C3AED"))
     }
 }
 

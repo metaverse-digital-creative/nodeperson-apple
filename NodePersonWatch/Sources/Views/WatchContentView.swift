@@ -25,6 +25,20 @@ struct WatchContentView: View {
 
     private var watchList: some View {
         List {
+            // Wellness quick access
+            Section {
+                NavigationLink {
+                    WatchWellnessView()
+                } label: {
+                    HStack(spacing: 8) {
+                        Image(systemName: "sparkles")
+                            .foregroundStyle(Color(hex: "#7C3AED"))
+                        Text("Wellness")
+                            .font(.headline)
+                    }
+                }
+            }
+
             // Quick principle reminder
             Section {
                 VStack(spacing: 4) {

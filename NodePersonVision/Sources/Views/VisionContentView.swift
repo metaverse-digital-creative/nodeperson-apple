@@ -3,10 +3,16 @@ import NodePersonShared
 
 /// visionOS spatial content view with tab-based navigation.
 struct VisionContentView: View {
-    @State private var selectedTab = "people"
+    @State private var selectedTab = "wellness"
 
     var body: some View {
         TabView(selection: $selectedTab) {
+            VisionWellnessHomeView()
+                .tabItem {
+                    Label("Wellness", systemImage: "sparkles")
+                }
+                .tag("wellness")
+
             VisionNodePersonsView()
                 .tabItem {
                     Label("節點人物", systemImage: "person.3.fill")
