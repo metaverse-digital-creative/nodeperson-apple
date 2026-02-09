@@ -25,6 +25,7 @@ enum APIEndpoint {
     case karma(nodePersonId: String)
     case refreshKarma(nodePersonId: String)
     case refreshAllKarma
+    case contributions(nodePersonId: String, limit: Int = 20)
 
     // ─── Events (茶會功能) ───
     case listEvents(region: String? = nil)
@@ -58,6 +59,8 @@ enum APIEndpoint {
             return "PATCH"
         case .deleteNodePerson, .cancelEvent:
             return "DELETE"
+        case .contributions:
+            return "GET"
         default:
             return "GET"
         }
@@ -98,13 +101,15 @@ enum APIEndpoint {
 
         // Karma
         case .karmaLeaderboard:
-            return "/community/karma/leaderboard"
+            return "/api/community/karma/leaderboard"
         case .karma(let nodePersonId):
-            return "/community/karma/\(nodePersonId)"
+            return "/api/community/karma/\(nodePersonId)"
         case .refreshKarma(let nodePersonId):
-            return "/community/karma/\(nodePersonId)/refresh"
+            return "/api/community/karma/\(nodePersonId)/refresh"
         case .refreshAllKarma:
-            return "/community/karma/refresh-all"
+            return "/api/community/karma/refresh-all"
+        case .contributions(let nodePersonId, _):
+            return "/api/community/karma/\(nodePersonId)/contributions"
 
         // Events
         case .listEvents:
@@ -172,6 +177,8 @@ enum APIEndpoint {
             if let category { items.append(.init(name: "category", value: category)) }
             if let status { items.append(.init(name: "status", value: status)) }
             return items.isEmpty ? nil : items
+        case .contributions(_, let limit):
+            return [.init(name: "limit", value: String(limit))]
         default:
             return nil
         }

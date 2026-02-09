@@ -1,7 +1,13 @@
 import SwiftUI
 
-/// watchOS Karma complication and detail view.
+/// watchOS Karma view — compact 貢獻紀錄 (contribution record).
 struct WatchKarmaView: View {
+    /// NodePerson ID — configurable, defaults to "demo" for dev.
+    var nodePersonId: String = {
+        // TODO: Replace with actual user session ID
+        ProcessInfo.processInfo.environment["NODEPERSON_ID"] ?? "demo"
+    }()
+
     @State private var karma: KarmaScore?
     @State private var isLoading = true
 
@@ -47,11 +53,11 @@ struct WatchKarmaView: View {
                     .padding(.horizontal)
                 }
             } else {
-                Text("無法載入 Karma Score")
+                Text("無法載入")
                     .foregroundColor(.secondary)
             }
         }
-        .navigationTitle("Green Karma")
+        .navigationTitle("貢獻紀錄")
         .task {
             await loadKarma()
         }
@@ -82,13 +88,16 @@ struct WatchKarmaView: View {
         isLoading = true
         defer { isLoading = false }
 
-        // TODO: Replace with actual nodePersonId from user session
-        guard let url = APIEndpoint.karma(nodePersonId: "demo").url() else { return }
+        guard let url = APIEndpoint.karma(nodePersonId: nodePersonId).url() else {
+            karma = .preview // Offline fallback
+            return
+        }
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
             karma = try JSONDecoder().decode(KarmaScore.self, from: data)
         } catch {
             print("Failed to load karma: \(error)")
+            karma = .preview // Offline fallback — always show something
         }
     }
 }

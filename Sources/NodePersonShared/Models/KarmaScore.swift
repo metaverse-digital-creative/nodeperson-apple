@@ -1,6 +1,6 @@
 import Foundation
 
-/// Green Karma Score — the multi-dimensional community impact metric.
+/// Green Karma Score — the multi-dimensional contribution record (貢獻紀錄).
 ///
 /// Formula (weights):
 ///   totalKarma = recycling × 0.35 + referral × 0.25 + community × 0.20 + trust × 0.20
@@ -47,31 +47,55 @@ struct KarmaScore: Codable {
         default: return "社區新苗"
         }
     }
+
+    /// Preview / offline fallback data
+    static let preview = KarmaScore(
+        recyclingScore: 72,
+        referralScore: 45,
+        communityScore: 88,
+        trustScore: 65,
+        totalKarma: 67.5,
+        weeklyDelta: 3.2,
+        activeStreak: 5,
+        level: 7
+    )
 }
 
-/// Karma leaderboard entry from the API
-struct KarmaLeaderboardEntry: Codable, Identifiable {
-    let rank: Int
+/// A single contribution record entry (replaces leaderboard concept — 貢獻紀錄, 非排行榜)
+struct ContributionRecord: Codable, Identifiable {
+    let id: String
     let nodePersonId: String
-    let name: String
-    let nodeType: String
-    let nodeTypeLabel: String?
-    let district: String?
-    let region: String?
-    let totalKarma: Double
-    let level: Int
-    let weeklyDelta: Double
-    let activeStreak: Int
-    let breakdown: KarmaBreakdown
+    let type: String        // recycling | referral | community | trust
+    let description: String
+    let karmaPoints: Double
+    let timestamp: String
 
-    var id: String { nodePersonId }
+    var typeEmoji: String {
+        switch type {
+        case "recycling": return "♻️"
+        case "referral":  return "🤝"
+        case "community": return "🏘️"
+        case "trust":     return "💎"
+        default:          return "✨"
+        }
+    }
+
+    var typeColor: String {
+        switch type {
+        case "recycling": return "green"
+        case "referral":  return "orange"
+        case "community": return "blue"
+        case "trust":     return "purple"
+        default:          return "gray"
+        }
+    }
 }
 
-struct KarmaBreakdown: Codable {
-    let recycling: Double
-    let referral: Double
-    let community: Double
-    let trust: Double
+/// API response for contribution history
+struct ContributionResponse: Codable {
+    let nodePersonId: String
+    let total: Int
+    let records: [ContributionRecord]
 }
 
 /// Karma history snapshot for trend visualization

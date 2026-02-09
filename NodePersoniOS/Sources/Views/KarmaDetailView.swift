@@ -1,9 +1,10 @@
 import SwiftUI
 
-/// Full Karma detail view for iOS with animated rings, breakdown, and history.
+/// Full Karma detail view for iOS — 貢獻紀錄 (Contribution Record), not leaderboard.
 struct KarmaDetailView: View {
     let nodePersonId: String
     @State private var karma: KarmaScore?
+    @State private var contributions: [ContributionRecord] = []
     @State private var isLoading = true
     @State private var animateRing = false
 
@@ -76,6 +77,23 @@ struct KarmaDetailView: View {
                     .background(Color(.systemGray6))
                     .cornerRadius(16)
                     .padding(.horizontal)
+
+                    // Contribution history (貢獻紀錄)
+                    if !contributions.isEmpty {
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("貢獻紀錄")
+                                .font(.headline)
+                                .padding(.horizontal)
+
+                            ForEach(contributions) { record in
+                                ContributionRow(record: record)
+                            }
+                        }
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(16)
+                        .padding(.horizontal)
+                    }
                 } else {
                     Text("無法載入 Karma Score")
                         .foregroundColor(.secondary)
@@ -83,9 +101,10 @@ struct KarmaDetailView: View {
                 }
             }
         }
-        .navigationTitle("Green Karma")
+        .navigationTitle("我的貢獻紀錄")
         .task {
             await loadKarma()
+            await loadContributions()
         }
         .refreshable {
             await refresh()
@@ -95,12 +114,27 @@ struct KarmaDetailView: View {
     private func loadKarma() async {
         isLoading = true
         defer { isLoading = false }
-        guard let url = APIEndpoint.karma(nodePersonId: nodePersonId).url() else { return }
+        guard let url = APIEndpoint.karma(nodePersonId: nodePersonId).url() else {
+            karma = .preview // Offline fallback
+            return
+        }
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
             karma = try JSONDecoder().decode(KarmaScore.self, from: data)
         } catch {
             print("Failed to load karma: \(error)")
+            karma = .preview // Offline fallback
+        }
+    }
+
+    private func loadContributions() async {
+        guard let url = APIEndpoint.contributions(nodePersonId: nodePersonId).url() else { return }
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let response = try JSONDecoder().decode(ContributionResponse.self, from: data)
+            contributions = response.records
+        } catch {
+            print("Failed to load contributions: \(error)")
         }
     }
 
@@ -114,6 +148,52 @@ struct KarmaDetailView: View {
         } catch {
             print("Failed to refresh karma: \(error)")
         }
+    }
+}
+
+// ─── Contribution Row ───
+
+struct ContributionRow: View {
+    let record: ContributionRecord
+
+    var body: some View {
+        HStack(spacing: 12) {
+            Text(record.typeEmoji)
+                .font(.title3)
+                .frame(width: 32)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(record.description)
+                    .font(.subheadline)
+                    .foregroundColor(.primary)
+                Text(formattedDate)
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
+            }
+
+            Spacer()
+
+            Text("+\(String(format: "%.0f", record.karmaPoints))")
+                .font(.caption.bold())
+                .foregroundColor(.green)
+                .padding(.horizontal, 8)
+                .padding(.vertical, 4)
+                .background(Color.green.opacity(0.1))
+                .cornerRadius(8)
+        }
+        .padding(.horizontal)
+    }
+
+    private var formattedDate: String {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        guard let date = formatter.date(from: record.timestamp) else {
+            // Try without fractional seconds
+            formatter.formatOptions = [.withInternetDateTime]
+            guard let date = formatter.date(from: record.timestamp) else { return record.timestamp }
+            return RelativeDateTimeFormatter().localizedString(for: date, relativeTo: Date())
+        }
+        return RelativeDateTimeFormatter().localizedString(for: date, relativeTo: Date())
     }
 }
 
