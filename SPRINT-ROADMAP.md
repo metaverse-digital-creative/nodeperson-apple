@@ -14,6 +14,7 @@
 - [x] APIConfig port fix (3000→5001)
 - [x] Offline fallback (preview data)
 - [x] Package.swift macOS v14 (@Observable)
+- [x] Xcode `.xcodeproj` (WellnessApple — 3 targets: iOS, watchOS, visionOS)
 
 ---
 
@@ -63,10 +64,10 @@
 
 ## 🔄 持續性工作（不需觸發）
 
-- [ ] Xcode `.xcodeproj` 設定（真機測試用）
+- [x] Xcode `.xcodeproj` 設定（真機測試用）— WellnessApple.xcodeproj shipped
 - [ ] 單元測試
 - [ ] Accessibility (VoiceOver, Dynamic Type)
 
 ---
 
-*Philosophy: Ship when data says so, not when calendar says so.*
+*Updated: 2026-02-09 14:46 | Philosophy: Ship when data says so, not when calendar says so.*
