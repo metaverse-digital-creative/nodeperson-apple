@@ -1,54 +1,72 @@
-# 🚀 Sprint Roadmap — Green Karma Score → 媒合 MVP
+# 🏃 Sprint Roadmap — Data-Driven Development
 
-> **Start**: 2026-02-10 (Mon) → **Beta Launch**: 2026-02-24 (Mon)
-> **Focus**: iOS + watchOS 端的 GKS 顯示與媒合 UI
-
----
-
-## Week 0 — 2/10 (Mon): Ship Green Karma Score ✨
-
-> Ready 定義：Watch + iOS 可正常顯示分數
-
-- [x] iOS: GKS 顯示畫面 (KarmaScore integration)
-- [x] watchOS: GKS 顯示畫面 (compact view)
-- [x] 連接 recycling-leads-platform API
-- [x] 驗證：兩平台正常顯示
+> **原則：軟體不跟日曆走——跟數據走。**
+> 每個功能在真實數據或回饋達到觸發條件時才啟動開發。
 
 ---
 
-## Week 1 — 2/11 ~ 2/16: GKS 穩定 + 媒合 UI 啟動
+## 🟢 已完成 (Shipped)
 
-- [ ] GKS 穩定 + edge case 修正
-- [ ] **2/13 (Thu): GKS 穩定確認點** ← checkpoint
-- [ ] 媒合 UI 設計 (iOS)
-  - [ ] AI 分類結果顯示
-  - [ ] 金流狀態顯示
-  - [ ] 感謝訊息發送 UI
-
----
-
-## Week 2 — 2/17 ~ 2/23: 媒合 UI 完成 + Demo
-
-- [ ] 完成媒合 iOS UI 開發
-- [ ] watchOS 媒合通知
-- [ ] **2/22 (Sat): 內部 Demo + 修正** ← checkpoint
+- [x] KarmaScore model (4 dimensions)
+- [x] KarmaRingView (shared ring chart)
+- [x] KarmaDetailView (iOS — 「我的貢獻紀錄」)
+- [x] WatchKarmaView (watchOS — compact view)
+- [x] APIConfig port fix (3000→5001)
+- [x] Offline fallback (preview data)
+- [x] Package.swift macOS v14 (@Observable)
 
 ---
 
-## Week 3 — 2/24 (Mon): 媒合 Beta Launch 🎉
+## 📊 下一步：由數據觸發
 
-- [ ] Soft launch
-- [ ] 用戶回饋收集
-- [ ] 迭代規劃
+### Trigger 1: 後端 GKS API 有真實數據
+> 📍 觸發條件：`/api/community/karma/:id` 返回**非 seed** 的真實用戶分數
+
+開發項目：
+- [ ] 移除 "demo" 預設，連接真實 user session
+- [ ] Karma 即時更新（pull-to-refresh + 背景刷新）
+- [ ] 貢獻紀錄 timeline 與真實 contributions API 對接
+
+### Trigger 2: 使用者回饋 Watch 畫面
+> 📍 觸發條件：收到**第一筆真實用戶回饋**（Karma 顯示太擠/看不懂/想看更多）
+
+開發項目：
+- [ ] Watch Complication (錶面小工具)
+- [ ] 手腕震動提醒「今天回收了嗎?」
+- [ ] Watch 數字尺寸/佈局調整
+
+### Trigger 3: 首筆成交出現
+> 📍 觸發條件：recycling-leads-platform 出現第一筆 `completed` match
+
+開發項目：
+- [ ] 媒合結果通知 UI
+- [ ] 交易→Karma 自動加分動畫
+- [ ] 感謝訊息推播 UI
+
+### Trigger 4: 活躍 NodePerson ≥ 10
+> 📍 觸發條件：有 ≥ 10 個不同的 nodePersonId 呼叫過 karma API
+
+開發項目：
+- [ ] 社區貢獻統計頁面
+- [ ] 茶會 UI（創建 / 報名 / QR 簽到）
+- [ ] 轉介任務 UI
+
+### Trigger 5: 企業客戶詢問
+> 📍 觸發條件：收到第一個企業方的 demo request
+
+開發項目：
+- [ ] visionOS 3D 信任熱力圖
+- [ ] ESG 報告 UI
+- [ ] 企業 Dashboard 模式
 
 ---
 
-## Quick Status
+## 🔄 持續性工作（不需觸發）
 
-| Milestone | Target | Status |
-|-----------|--------|--------|
-| GKS Ship (iOS + Watch) | 2/10 | ✅ Done |
-| GKS Stable | 2/13 | ⬜ Not Started |
-| 媒合 UI Start | 2/14 | ⬜ Not Started |
-| 媒合 UI Complete | 2/22 | ⬜ Not Started |
-| Beta Launch | 2/24 | ⬜ Not Started |
+- [ ] Xcode `.xcodeproj` 設定（真機測試用）
+- [ ] 單元測試
+- [ ] Accessibility (VoiceOver, Dynamic Type)
+
+---
+
+*Philosophy: Ship when data says so, not when calendar says so.*
