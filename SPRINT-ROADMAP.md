@@ -9,10 +9,10 @@
 
 > Ready 定義：Watch + iOS 可正常顯示分數
 
-- [ ] iOS: GKS 顯示畫面 (KarmaScore integration)
-- [ ] watchOS: GKS 顯示畫面 (compact view)
-- [ ] 連接 recycling-leads-platform API
-- [ ] 驗證：兩平台正常顯示
+- [x] iOS: GKS 顯示畫面 (KarmaScore integration)
+- [x] watchOS: GKS 顯示畫面 (compact view)
+- [x] 連接 recycling-leads-platform API
+- [x] 驗證：兩平台正常顯示
 
 ---
 
@@ -47,7 +47,7 @@
 
 | Milestone | Target | Status |
 |-----------|--------|--------|
-| GKS Ship (iOS + Watch) | 2/10 | ⬜ Not Started |
+| GKS Ship (iOS + Watch) | 2/10 | ✅ Done |
 | GKS Stable | 2/13 | ⬜ Not Started |
 | 媒合 UI Start | 2/14 | ⬜ Not Started |
 | 媒合 UI Complete | 2/22 | ⬜ Not Started |
